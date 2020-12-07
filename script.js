@@ -53,7 +53,7 @@ btnRoll.addEventListener('click', () => {
     }
 });
 
-document.querySelector('.btn--hold').addEventListener('click', () => {
+btnHold.addEventListener('click', () => {
     scores[activePlayer] += currentScore;
 
     document.querySelector('#score--' + activePlayer).textContent = scores[activePlayer];
