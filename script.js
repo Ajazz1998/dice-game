@@ -38,7 +38,7 @@ init();
 var x = document.querySelector('#score--0').textContent;
 
 
-document.querySelector('.btn--roll').addEventListener('click', () => {
+btnRoll.addEventListener('click', () => {
     var dice = Math.floor(Math.random() * 6) + 1;
 
     var diceDOM = diceEl;
