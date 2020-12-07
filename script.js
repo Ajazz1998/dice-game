@@ -84,5 +84,5 @@ function nextPlayer(){
 };
 
 
-document.querySelector('.btn--new').addEventListener('click', init);
+btnNew.addEventListener('click', init);
 
