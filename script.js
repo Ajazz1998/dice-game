@@ -74,8 +74,8 @@ function nextPlayer(){
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
     currentScore = 0;
 
-    document.getElementById('current--0').textContent = '0';
-    document.getElementById('current--1').textContent = '0';
+    current0El.textContent = '0';
+    current0E2.textContent = '0';
 
     document.querySelector('.player--0').classList.toggle('player--active');
     document.querySelector('.player--1').classList.toggle('player--active');
