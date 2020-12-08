@@ -21,8 +21,6 @@ function init() {
     activePlayer = 0;
     playing = true;
   
-
-  
     diceEl.classList.add('hidden');
     player0El.classList.remove('player--winner');
     player1El.classList.remove('player--winner');
@@ -43,34 +41,41 @@ var x = document.querySelector('#score--0').textContent;
 
 
 btnRoll.addEventListener('click', () => {
-    var dice = Math.floor(Math.random() * 6) + 1;
+    if(playing){
+        var dice = Math.floor(Math.random() * 6) + 1;
 
-    var diceDOM = diceEl;
-    diceDOM.style.display = 'block';
-    diceDOM.src = './img/dice-' + dice + '.png';
-
-    if (dice !== 1) {
-        currentScore += dice;
-        document.querySelector('#current--' + activePlayer).textContent = currentScore;
-    } else {
-        nextPlayer();
+        var diceDOM = diceEl;
+        diceDOM.style.display = 'block';
+        diceDOM.src = './img/dice-' + dice + '.png';
+    
+        if (dice !== 1) {
+            currentScore += dice;
+            document.querySelector('#current--' + activePlayer).textContent = currentScore;
+        } else {
+            nextPlayer();
+        }
     }
+
 });
 
 btnHold.addEventListener('click', () => {
-    scores[activePlayer] += currentScore;
+    if(playing){
+        scores[activePlayer] += currentScore;
 
-    document.querySelector('#score--' + activePlayer).textContent = scores[activePlayer];
+        document.querySelector('#score--' + activePlayer).textContent = scores[activePlayer];
+    
+        if (scores[activePlayer] >= 10){
+            diceEl.style.display = 'none';
+    
+            document.querySelector('.player--' + activePlayer).classList.add('player--winner');
+            document.querySelector('.player--' + activePlayer).classList.remove('active');
 
-    if (scores[activePlayer] >= 10){
-        document.querySelector('.player--' + activePlayer).textContent = 'player--winner!';
-        diceEl.style.display = 'none';
-
-        document.querySelector('.player--' + activePlayer).classList.add('player--winner');
-        document.querySelector('.player--' + activePlayer).classList.remove('active');
-    } else {
-        nextPlayer();
+            playing = false;
+        } else {
+            nextPlayer();
+        }
     }
+
     
 });
 
