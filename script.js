@@ -14,23 +14,27 @@ const btnHold = document.querySelector('.btn--hold');
 let scores, currentScore, activePlayer, playing;
 
 // Starting conditions
-const init = function () {
-  scores = [0, 0];
-  currentScore = 0;
-  activePlayer = 0;
-  playing = true;
 
-  score0El.textContent = 0;
-  score1El.textContent = 0;
-  current0El.textContent = 0;
-  current1El.textContent = 0;
+function init() {
+    scores = [0, 0];
+    currentScore = 0;
+    activePlayer = 0;
+    playing = true;
+  
 
-  diceEl.classList.add('hidden');
-  player0El.classList.remove('player--winner');
-  player1El.classList.remove('player--winner');
-  player0El.classList.add('player--active');
-  player1El.classList.remove('player--active');
-};
+  
+    diceEl.classList.add('hidden');
+    player0El.classList.remove('player--winner');
+    player1El.classList.remove('player--winner');
+    player0El.classList.add('player--active');
+    player1El.classList.remove('player--active');
+
+    score0El.textContent = 0;
+    score1El.textContent = 0;
+    current0El.textContent = 0;
+    current1El.textContent = 0;
+  };
+
 init();
 
 
@@ -75,7 +79,7 @@ function nextPlayer(){
     currentScore = 0;
 
     current0El.textContent = '0';
-    current0E2.textContent = '0';
+    current1El.textContent = '0';
 
     document.querySelector('.player--0').classList.toggle('player--active');
     document.querySelector('.player--1').classList.toggle('player--active');
@@ -85,4 +89,3 @@ function nextPlayer(){
 
 
 btnNew.addEventListener('click', init);
-
