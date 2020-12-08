@@ -58,7 +58,7 @@ btnRoll.addEventListener('click', () => {
         diceDOM.style.display = 'block';
         diceDOM.src = './img/dice-' + dice01 + '.png';
     
-        if (dice !== 1) {
+        if (dice !== 1 || dice01 !== 1) {
             currentScore += dice;
             document.querySelector('#current--' + activePlayer).textContent = currentScore;
         } else {
@@ -100,7 +100,7 @@ function nextPlayer(){
     document.querySelector('.player--0').classList.toggle('player--active');
     document.querySelector('.player--1').classList.toggle('player--active');
 
-    diceEl.style.display = 'none';
+    diceEl.style.display = 'black';
 };
 
 
