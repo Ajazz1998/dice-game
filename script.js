@@ -7,6 +7,7 @@ const current0El = document.getElementById('current--0');
 const current1El = document.getElementById('current--1');
 
 const diceEl = document.querySelector('.dice');
+const dice01El = document.querySelector('.dice--1');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
@@ -50,6 +51,12 @@ btnRoll.addEventListener('click', () => {
         var diceDOM = diceEl;
         diceDOM.style.display = 'block';
         diceDOM.src = './img/dice-' + dice + '.png';
+    
+        var dice01 = Math.floor(Math.random() * 6) + 1;
+
+        var diceDOM = dice01El;
+        diceDOM.style.display = 'block';
+        diceDOM.src = './img/dice-' + dice01 + '.png';
     
         if (dice !== 1) {
             currentScore += dice;
