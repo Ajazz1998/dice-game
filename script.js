@@ -10,6 +10,7 @@ const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const scoresValue = document.querySelector('#score-input');
 
 let scores, currentScore, activePlayer, playing;
 
@@ -66,7 +67,7 @@ btnHold.addEventListener('click', () => {
 
         document.querySelector('#score--' + activePlayer).textContent = scores[activePlayer];
     
-        if (scores[activePlayer] >= 10){
+        if (scores[activePlayer] >= scoresValue.value){
             document.querySelector('#name--' + activePlayer).textContent = 'winner!';
             diceEl.style.display = 'none';
     
