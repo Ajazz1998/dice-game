@@ -27,6 +27,7 @@ function init() {
     player0El.classList.add('player--active');
     player1El.classList.remove('player--active');
     document.querySelector('#name--0').textContent = 'Player 1';
+    document.querySelector('#name--1').textContent = 'Player 2';
 
     score0El.textContent = 0;
     score1El.textContent = 0;
@@ -66,7 +67,7 @@ btnHold.addEventListener('click', () => {
         document.querySelector('#score--' + activePlayer).textContent = scores[activePlayer];
     
         if (scores[activePlayer] >= 10){
-            document.querySelector('#name--' + activePlayer).textContent = 'player--winner!';
+            document.querySelector('#name--' + activePlayer).textContent = 'winner!';
             diceEl.style.display = 'none';
     
             document.querySelector('.player--' + activePlayer).classList.add('player--winner');
