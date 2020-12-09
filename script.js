@@ -79,6 +79,7 @@ btnHold.addEventListener('click', () => {
         if (scores[activePlayer] >= scoresValue.value){
             document.querySelector('#name--' + activePlayer).textContent = 'winner!';
             diceEl.style.display = 'none';
+            dice01El.style.display = 'none';
     
             document.querySelector('.player--' + activePlayer).classList.add('player--winner');
             document.querySelector('.player--' + activePlayer).classList.remove('active');
@@ -102,7 +103,8 @@ function nextPlayer(){
     document.querySelector('.player--0').classList.toggle('player--active');
     document.querySelector('.player--1').classList.toggle('player--active');
 
-    diceEl.style.display = 'black';
+    diceEl.style.display = 'none';
+    dice01El.style.display = 'none';
 };
 
 
