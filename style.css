@@ -175,11 +175,11 @@ main input[type = text]{
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.76);
   padding: 10px;
-  width: 100px;
-  left: 45%;
+  width: 130px;
+  left: 43%;
   margin-bottom: 20px;
   text-align: center;
   outline: none;
   border: none;
-  font-size: 20px;
+  font-size: 13px;
 }
