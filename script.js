@@ -57,9 +57,11 @@ btnRoll.addEventListener('click', () => {
         var diceDOM = dice01El;
         diceDOM.style.display = 'block';
         diceDOM.src = './img/dice-' + dice01 + '.png';
+
+        let mainDice = dice + dice01;
     
-        if (dice !== 1 || dice01 !== 1) {
-            currentScore += dice;
+        if (dice !== 1 !== dice01 !== 1) {
+            currentScore += mainDice;
             document.querySelector('#current--' + activePlayer).textContent = currentScore;
         } else {
             nextPlayer();
