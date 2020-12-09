@@ -13,7 +13,7 @@ const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 const scoresValue = document.querySelector('#score-input');
 
-let scores, currentScore, activePlayer, playing;
+let scores, currentScore, activePlayer, playing, lastDice;
 
 // Starting conditions
 
@@ -59,13 +59,20 @@ btnRoll.addEventListener('click', () => {
         diceDOM.src = './img/dice-' + dice01 + '.png';
 
         let mainDice = dice + dice01;
-    
-        if (dice !== 1 && dice01 !== 1) {
+        
+        if(dice === 6 && lastDice === 6){
+            scores[activePlayer] = 0;
+            document.querySelector('#score--' + activePlayer).textContent = '0';
+
+        }else if (dice !== 1 && dice01 !== 1) {
             currentScore += mainDice;
             document.querySelector('#current--' + activePlayer).textContent = currentScore;
+            
         } else {
             nextPlayer();
         }
+
+        lastDice = dice;
     }
 
 });
